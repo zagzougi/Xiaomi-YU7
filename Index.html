@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚗 Xiaomi YU7</title>
+    <style>
+        body {
+            background: #000;
+            color: #0f0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #0f0;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: block;
+            background: #222;
+            color: white;
+            padding: 15px;
+            margin: 12px auto;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            max-width: 300px;
+            border: 2px solid #0f0;
+        }
+        .btn:hover {
+            background: #333;
+        }
+        .maps { background: #1a73e8; }
+        .netflix { background: #e50914; }
+        .starzplay { background: #00a8ff; }
+        .smarters { background: #ff9800; }
+        .spotify { background: #1db954; }
+        .youtube { background: #ff0000; }
+    </style>
+</head>
+<body>
+    <h1>🚗 لوحة تحكم YU7</h1>
+    
+    <a href="https://maps.app.goo.gl/" class="btn maps">📍 خرائط Google</a>
+    <a href="https://www.netflix.com/" class="btn netflix">🎬 Netflix</a>
+    <a href="https://www.starzplay.com/" class="btn starzplay">📺 Starzplay</a>
+    <a href="smarters://" class="btn smarters">📡 Smarters Player</a>
+    <a href="https://open.spotify.com/" class="btn spotify">🎵 Spotify</a>
+    <a href="https://music.youtube.com/" class="btn youtube">🎶 YouTube Music</a>
+    <a href="https://www.waze.com/" class="btn" style="background:#333;">🗺️ Waze</a>
+    
+    <p style="margin-top:30px; color:#ccc;">🕒 الوقت: <span id="time">--:--:--</span></p>
+    
+    <script>
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('time').innerText = 
+                now.getHours().toString().padStart(2,'0') + ':' + 
+                now.getMinutes().toString().padStart(2,'0') + ':' + 
+                now.getSeconds().toString().padStart(2,'0');
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+    </script>
+</body>
+</html>
