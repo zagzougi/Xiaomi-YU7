@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚗 Xiaomi YU7 | لوحة القيادة</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #000;
+            color: #0f0;
+            font-family: 'Arial', sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 0 0 10px #0f0;
+        }
+        .container {
+            background: #111;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #0f0;
+            max-width: 400px;
+            width: 100%;
+        }
+        .btn {
+            display: block;
+            background: #0f0;
+            color: #000;
+            text-decoration: none;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #0c0;
+            transform: scale(1.05);
+        }
+        .btn-maps {
+            background: #4285F4;
+            color: white;
+        }
+        .btn-maps:hover {
+            background: #3367D6;
+        }
+        .btn-music {
+            background: #FF4081;
+            color: white;
+        }
+        .btn-music:hover {
+            background: #E91E63;
+        }
+        .btn-streaming {
+            background: #E50914;
+            color: white;
+        }
+        .btn-streaming:hover {
+            background: #B20710;
+        }
+        .btn-starzplay {
+            background: #00A8FF;
+            color: white;
+        }
+        .btn-starzplay:hover {
+            background: #0097E6;
+        }
+        .btn-smarters {
+            background: #FF9800;
+            color: white;
+        }
+        .btn-smarters:hover {
+            background: #F57C00;
+        }
+        .status {
+            background: #222;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 1em;
+            border: 1px solid #0f0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚗 Xiaomi YU7</h1>
+    <div class="container">
+        <a href="https://maps.app.goo.gl/" class="btn btn-maps" onclick="window.open('https://maps.app.goo.gl/', '_system'); return false;">
+            📍 Google Maps
+        </a>
+        
+        <a href="https://open.spotify.com/" class="btn btn-music" onclick="window.open('https://open.spotify.com/', '_system'); return false;">
+            🎵 Spotify
+        </a>
+        
+        <a href="https://music.youtube.com/" class="btn btn-music" onclick="window.open('https://music.youtube.com/', '_system'); return false;">
+            🎶 YouTube Music
+        </a>
+        
+        <a href="https://www.waze.com/live-map/" class="btn btn-maps" onclick="window.open('https://www.waze.com/live-map/', '_system'); return false;">
+            🗺️ Waze
+        </a>
+        
+        <!-- التطبيقات المضافة -->
+        <a href="https://www.netflix.com/" class="btn btn-streaming" onclick="window.open('https://www.netflix.com/', '_system'); return false;">
+            🎬 Netflix
+        </a>
+        
+        <a href="https://www.starzplay.com/" class="btn btn-starzplay" onclick="window.open('https://www.starzplay.com/', '_system'); return false;">
+            📺 Starzplay
+        </a>
+        
+        <a href="smarters://" class="btn btn-smarters" onclick="window.open('smarters://', '_system'); return false;">
+            📡 Smarters Player Lite
+        </a>
+        <!-- نهاية التطبيقات المضافة -->
+        
+        <a href="https://zagzougi.github.io/YU7/" class="btn" style="background: #0a0;">
+            🔄 تحديث الصفحة
+        </a>
+    </div>
+    
+    <div class="status">
+        ⚡ متصل: <span id="time">--:--:--</span><br>
+        📍 جاهز للقيادة
+    </div>
+
+    <script>
+        // تحديث الوقت
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('time').innerText = now.toLocaleTimeString('ar-SA');
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+        
+        // إشعار عند فتح التطبيق
+        window.onload = function() {
+            console.log("🚗 لوحة قيادة YU7 جاهزة");
+        };
+    </script>
+</body>
+</html>
